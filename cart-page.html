@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart-styles.css">
+    <title>Your Shopping Cart</title>
+</head>
+<body>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.cart-items {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.cart-item {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.price, .item-total {
+    color: #ff4500; /* Add your desired price color */
+}
+
+.quantity {
+    margin-top: 5px;
+}
+
+.remove-item-btn {
+    background-color: #ff4500; /* Add your desired button color */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.remove-item-btn:hover {
+    background-color: #e44d26; /* Add a slightly different color on hover */
+}
+
+.cart-summary {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.checkout-btn {
+    background-color: #ff4500; /* Add your desired button color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.checkout-btn:hover {
+    background-color: #e44d26; /* Add a slightly different color on hover */
+}
+
+</style>
+    <header>
+        <h1>Your Shopping Cart</h1>
+    </header>
+
+    <section class="cart-items">
+        <div class="cart-item">
+            <img src="product1.jpg" alt="Product 1">
+            <div class="item-details">
+                <h3>Product 1</h3>
+                <p class="price">$29.99</p>
+                <div class="quantity">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" value="1" min="1">
+                </div>
+                <p class="item-total">$29.99</p>
+                <button class="remove-item-btn">Remove</button>
+            </div>
+        </div>
+
+        <!-- Add more cart items as needed -->
+
+    </section>
+
+    <div class="cart-summary">
+        <h2>Cart Summary</h2>
+        <p>Total Items: <span id="cart-count">1</span></p>
+        <p>Total Price: <span id="total-price">$29.99</span></p>
+        <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const quantityInputs = document.querySelectorAll('.quantity input');
+    const itemTotalElements = document.querySelectorAll('.item-total');
+    const totalPriceElement = document.getElementById('total-price');
+    const cartCountElement = document.getElementById('cart-count');
+    const removeItemButtons = document.querySelectorAll('.remove-item-btn');
+
+    // Update item total and total price on quantity change
+    quantityInputs.forEach((input, index) => {
+        input.addEventListener('input', function () {
+            const quantity = parseInt(input.value);
+            const price = 29.99; // Replace with actual product price
+            const itemTotal = quantity * price;
+            itemTotalElements[index].textContent = `$${itemTotal.toFixed(2)}`;
+            updateTotalPrice();
+        });
+    });
+
+    // Remove item from the cart
+    removeItemButtons.forEach((button, index) => {
+        button.addEventListener('click', function () {
+            button.closest('.cart-item').remove();
+            updateTotalPrice();
+            updateCartCount();
+        });
+    });
+
+    // Update the total price
+    function updateTotalPrice() {
+        const itemTotalValues = Array.from(itemTotalElements)
+            .map(element => parseFloat(element.textContent.replace('$', '')));
+        const totalPrice = itemTotalValues.reduce((total, value) => total + value, 0);
+        totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+    }
+
+    // Update the cart count
+    function updateCartCount() {
+        const cartItemCount = document.querySelectorAll('.cart-item').length;
+        cartCountElement.textContent = cartItemCount;
+    }
+});
+    // Existing JavaScript code remains unchanged
+
+function openPopup() {
+    document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+
+    </script>
+</body>
+</html>
