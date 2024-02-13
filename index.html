@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>YASSO Wearing</title>
+</head>
+<body>
+
+    <header>
+        <h1>YASSO !!!</h1>
+        <nav>
+            <ul>
+                <li><a href="#kids-section">Kids</a></li>
+                <li><a href="#women-section">Women</a></li>
+                <li><a href="#men-section">Men</a></li>
+              <li><a href="#arrival-section"> New Arrivals</a></li>
+              <li><a href="#accessories-section">Accessories</a></li>
+            </ul>
+        </nav>
+      	
+    </header>
+    <div id="header-banner">
+        <img src="output.jpg">
+    </div>
+    <section id="featured-banner">
+        <div class="banner-content">
+            <h2>New Arrivals</h2>
+            <p>Discover the latest trends for the season!</p>
+          
+            <a href="#new-arrivals" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Other sections and content can be added here -->
+
+   <section class="product-cards">
+        <div class="card" id="men-section">
+            <img src="men-wearing.jpg" alt="men wearing">
+            <h3>أزياء رجالى</h3>
+            <p class="price">Start $20.00</p>
+            <button onclick="myFunction()">Add to Cart</button>
+        </div>
+
+        <div class="card" id="women-section">
+            <img src="women-wear.jpg" alt="women wearing">
+            <h3>أزياء نسائى</h3>
+            <p class="price">Start $10.99</p>
+            <button onclick="myFunction()">Add to Cart</button>
+        </div>
+        <div class="card" id="kids-section">
+            <img src="kids-wearing.jpg" alt="Kids wearing">
+            <h3>أزياء الأطفال</h3>
+            <p class="price">Start $8.00</p>
+            <button onclick="myFunction()">Add to Cart</button>
+        </div>
+        <div class="card" id="accessories-section">
+            <img src="sunglasses.jpg" alt="sunglass">
+            <h3>نظارات شمس</h3>
+            <p class="price">Start $10.20</p>
+            <button onclick="myFunction()">Add to Cart</button>
+        </div>
+
+        <div class="card" id="">
+            <img src="watches.jpg" alt="Whatches">
+            <h3>ساعات كلاسكية</h3>
+            <p class="price">Start $120.00</p>
+            <button onclick="myFunction()">Add to Cart</button>
+        </div>
+        
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg" alt="hand bag">
+            <h3>شنط يد</h3>
+            <p class="price">Start $10.99</p>
+            <button onclick="myFunction()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2081199/pexels-photo-2081199.jpeg" alt="Back bag">
+            <h3>شنط ظهر</h3>
+            <p class="price">Start $30.99</p>
+            <button onclick="myFunction()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="classic-shoes.jpg" alt="classic-shoes">
+            <h3>أحذية كلاسكية</h3>
+            <p class="price">Start $45.00</p>
+            <button onclick="myFunction()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1478442/pexels-photo-1478442.jpeg" alt="sport-shoes">
+            <h3>أحذية رياضية</h3>
+            <p class="price">Start $35.50</p>
+            <button onclick="myFunction()">Add to Cart</button>
+        </div>
+
+
+        <!-- Add more cards as needed -->
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Clothing Store. All rights reserved.</p>
+    </footer>
+    <!-- <script>
+        function myFunction() {
+    var myWindow = window.open("cart-page.html", "", "width=200,height=100");
+  }
+        document.addEventListener('DOMContentLoaded', function () {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    const cartCountElement = document.getElementById('cart-count');
+
+    let cartCount = 0;
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            cartCount++;
+            cartCountElement.textContent = cartCount;
+            alert('Product added to cart!');
+        });
+    });
+});
+// Existing JavaScript code remains unchanged
+
+function openPopup() {
+    document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+    </script> -->
+    <script src="index.js"></script>
+</body>
+</html>
